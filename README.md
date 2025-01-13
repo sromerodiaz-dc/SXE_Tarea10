@@ -42,6 +42,12 @@ Para confirmarlo definitavemente, si vas a la direccion `http://localhost:8069` 
 
 ![odoo](./images/odoo.png)
 
+![odoo](./images/odoo2.png)
+
+Para esto es mejor marcar la casilla ***demo data*** ya que a la hora de implementar más módulos no hará falta meter datos manualmente para comenzar a trabajar con ellos.
+
+![odoo](./images/odoo3.png)
+
 ## Instala PgAdmin y conectala a lo BBDD
 
 En el readme tiene que estar explicado las diferentes partes del docker-composer, así como los comandos para lanzar los contenedores y capturas de pantalla que demuestren la instalación de Odoo, configuración y acceso al mismo así como de PgAdmin. Es necesario incluir una captura DENTRO de Odoo para demostrar que se ha instalado y configurado correctamente y también dentro de PgAdmin (instalad primero odoo y cread una base de datos).
