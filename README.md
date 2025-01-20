@@ -115,3 +115,9 @@ Dentro de PgAdmin no se encuentra nada en el *Dashboard* y esto es porque se tie
 
 ## ¿Que ocurre si en el ordenador local el puerto 5432 está ocupado? ¿Y si lo estuviese el 8069? ¿Como puedes solucionarlo?
 
+1. Al lanzar `docker compose up` nos saltará un error que impedirá la ejecución del servicio.
+
+2. Lo mismo que el apartado anterior.
+
+3. Mi solución personal sería matar aquellos servicios que estén empleando esos puertos con el comando `top` para ver todos los procesos y luego matarlo con el comando `killall [proceso]`.
+
