@@ -99,5 +99,19 @@ Introduce las credenciales, **(las del archivo docker compose)** y esto es lo qu
 ![pgAdmin](./images/pgAdmin2.png)
 
 
+### Solución de un "problema"
+
+Dentro de PgAdmin no se encuentra nada en el *Dashboard* y esto es porque se tiene que **vincular** desde `Add New Service`:
+
+![pgAdmin](./images/pgAdmin3.png)
+
+- - En el apartado "Connection" introduce los siguientes datos.
+
+![pgAdmin](./images/pgAdmin4.png)
+
+- - Al guardar la configuración y volver al Inicio aparecen las BBDDs.
+
+![pgAdmin](./images/pgAdmin5.png)
+
 ## ¿Que ocurre si en el ordenador local el puerto 5432 está ocupado? ¿Y si lo estuviese el 8069? ¿Como puedes solucionarlo?
 
