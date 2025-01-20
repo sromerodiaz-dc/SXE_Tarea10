@@ -5,22 +5,42 @@ services:
       - mydb
     ports:
       - "8069:8069"
+    container_name: odooWeb # nombre del contenedor
     environment:
       HOST: mydb
       USER: odoo
       PASSWORD: myodoo
+    restart: unless-stopped # el servicio solo se reiniciará cuando se haga manualmente
     volumes:
       - odoo-web-data:/var/lib/odoo
 
   mydb:
     image: postgres:15
+    container_name: pgDatabase # nombre del contenedor
     environment:
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: myodoo
       POSTGRES_USER: odoo
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
+    ports: 
+     - "5432:5432" # accesibilidad desde puerto por defecto
+    
+  pgadmin: 
+    restart: unless-stopped 
+    image: dpage/pgadmin4:latest 
+    container_name: pgAdmin
+    depends_on: 
+      - db
+    ports: 
+      - "5050:80"
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: sromerodiaz@danielcastelao.org # mi correo 
+      PGADMIN_DEFAULT_PASSWORD: 123
+    volumes: 
+      - pgadmin-data:/var/lib/pgadmin # establece la persistencia de los datos para no perderlos
 
-volumes:
-  odoo-web-data:
-  odoo-db-data:
+volumes: # declaracion de persistencias de todo lo declarado anteriormente
+  odoo-web-data: 
+  odoo-db-data: 
+  pgadmin-data:

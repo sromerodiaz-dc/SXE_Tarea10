@@ -48,7 +48,35 @@ Para esto es mejor marcar la casilla ***demo data*** ya que a la hora de impleme
 
 ![odoo](./images/odoo3.png)
 
+Al haber iniciado sesión se abre el siguiente panel:
+
+![odoo](./images/odopanel.png)
+
 ## Instala PgAdmin y conectala a lo BBDD
+
+A continuación la configuración de PgAdmin en el archivo `docker-compose.yml`:
+
+```
+# resto de configuración mostrada anteriormente
+pgadmin: 
+    restart: unless-stopped 
+    image: dpage/pgadmin4:latest 
+    container_name: pgAdmin
+    depends_on: 
+      - db
+    ports: 
+      - "5050:80"
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: sromerodiaz@danielcastelao.org # mi correo 
+      PGADMIN_DEFAULT_PASSWORD: 123
+    volumes: 
+      - pgadmin-data:/var/lib/pgadmin # establece la persistencia de los datos para no perderlos
+
+volumes: # declaracion de persistencias de todo lo declarado anteriormente
+  odoo-web-data: 
+  odoo-db-data: 
+  pgadmin-data: 
+```
 
 En el readme tiene que estar explicado las diferentes partes del docker-composer, así como los comandos para lanzar los contenedores y capturas de pantalla que demuestren la instalación de Odoo, configuración y acceso al mismo así como de PgAdmin. Es necesario incluir una captura DENTRO de Odoo para demostrar que se ha instalado y configurado correctamente y también dentro de PgAdmin (instalad primero odoo y cread una base de datos).
 
