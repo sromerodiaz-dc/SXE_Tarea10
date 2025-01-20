@@ -82,7 +82,22 @@ volumes: # declaracion de persistencias de todo lo declarado anteriormente
   pgadmin-data: 
 ```
 
-En el readme tiene que estar explicado las diferentes partes del docker-composer, así como los comandos para lanzar los contenedores y capturas de pantalla que demuestren la instalación de Odoo, configuración y acceso al mismo así como de PgAdmin. Es necesario incluir una captura DENTRO de Odoo para demostrar que se ha instalado y configurado correctamente y también dentro de PgAdmin (instalad primero odoo y cread una base de datos).
+### Verificación de la instalación de PgAdmin
+
+Una vez tengas todo en regla dentro del archivo `docker-compose.yml`, levantalo y comprueba también la instalación de *pgAdmin* de la siguiente manera:
+
+```
+Accede a http://(tu IP seleccionada):5050 en tu navegador
+```
+
+De esta forma verás lo siguiente:
+
+![mgAdmin](./images/pgadmin.png)
+
+Introduce las credenciales, **(las del archivo docker compose)** y esto es lo que aparece:
+
+![pgAdmin](./images/pgAdmin2.png)
+
 
 ## ¿Que ocurre si en el ordenador local el puerto 5432 está ocupado? ¿Y si lo estuviese el 8069? ¿Como puedes solucionarlo?
 
