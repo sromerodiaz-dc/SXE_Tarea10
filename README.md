@@ -52,6 +52,10 @@ Al haber iniciado sesión se abre el siguiente panel:
 
 ![odoo](./images/odopanel.png)
 
+Para confirmar que se ha instalado la versión community puedes ir a **Ajustes** y scrollear hasta abajo, en el apartado **Sobre** deberías ver lo siguiente:
+
+![odoo](./images/verificacion.png)
+
 ## Instala PgAdmin y conectala a lo BBDD
 
 A continuación la configuración de PgAdmin en el archivo `docker-compose.yml`:
@@ -63,7 +67,7 @@ pgadmin:
     image: dpage/pgadmin4:latest 
     container_name: pgAdmin
     depends_on: 
-      - db
+      - mydb
     ports: 
       - "5050:80"
     environment: 
